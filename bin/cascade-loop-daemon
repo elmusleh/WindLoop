@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Toggle script for keyboard shortcuts
+# Usage: bind this to a hotkey (e.g., Super+Alt+C)
+set -e
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHON="${SCRIPT_DIR}/../src/cascade_loop.py"
+
+if python3 "$PYTHON" --status | grep -q "Running"; then
+    python3 "$PYTHON" --stop
+    notify-send "Cascade Loop" "Stopped." 2>/dev/null || echo "Stopped."
+else
+    python3 "$PYTHON" --daemon
+    notify-send "Cascade Loop" "Started in background." 2>/dev/null || echo "Started."
+fi

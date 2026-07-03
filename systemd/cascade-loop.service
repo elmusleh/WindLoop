@@ -1,0 +1,14 @@
+[Unit]
+Description=Cascade Loop Automation
+After=graphical-session.target
+
+[Service]
+Type=forking
+ExecStart=%h/Desktop/cascade-loop/bin/cascade-loop --daemon
+ExecStop=%h/Desktop/cascade-loop/bin/cascade-loop --stop
+PIDFile=%h/.windsurf/cascade-loop.pid
+Restart=no
+Environment=DISPLAY=:0
+
+[Install]
+WantedBy=default.target

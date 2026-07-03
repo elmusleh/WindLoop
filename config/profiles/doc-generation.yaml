@@ -1,0 +1,14 @@
+# Documentation Generation Profile
+iterations: 4
+window_title: "Windsurf"
+sentinel_path: /tmp/cascade-loop.log
+pause_file_path: /tmp/cascade-loop.pause
+
+prompt_template: |
+  Generate or improve documentation for the next undocumented module.
+  Update README, docstrings, and any relevant markdown files.
+  As your VERY LAST action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+
+pre_delay: 2
+post_delay: 3
+timeout: 300

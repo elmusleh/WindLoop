@@ -1,0 +1,16 @@
+# Bug Fix Profile — short, focused iterations for fixing single issues
+iterations: 3
+window_title: "Windsurf"
+sentinel_path: /tmp/cascade-loop.log
+pause_file_path: /tmp/cascade-loop.pause
+
+prompt_template: |
+  Identify and fix the next highest-priority bug from the issue tracker or TODO comments.
+  Write a regression test if applicable.
+  Commit the fix with a clear message referencing the bug.
+  As your VERY LAST action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+
+pre_delay: 2
+post_delay: 3
+timeout: 300
+notifications: true

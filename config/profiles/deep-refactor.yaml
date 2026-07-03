@@ -1,0 +1,15 @@
+# Deep Refactor Profile — slow, careful iterations
+iterations: 5
+window_title: "Windsurf"
+sentinel_path: /tmp/cascade-loop.log
+pause_file_path: /tmp/cascade-loop.pause
+
+prompt_template: |
+  Read the active plan and implement the next major refactor step.
+  Ensure all tests pass before finishing.
+  Commit changes with a clear message.
+  As your VERY LAST action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+
+pre_delay: 5
+post_delay: 10
+timeout: 1800

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Git pre-commit hook for cascade-loop
+# Runs syntax checks before allowing commits
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+# Check if the syntax gate script exists
+if [ -f "$PROJECT_ROOT/scripts/check.sh" ]; then
+    exec "$PROJECT_ROOT/scripts/check.sh"
+else
+    echo "[WARN] scripts/check.sh not found. Skipping pre-commit checks."
+    exit 0
+fi

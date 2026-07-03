@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# CLI wrapper for cascade-loop automation
+set -e
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PYTHON="${SCRIPT_DIR}/../src/cascade_loop.py"
+python3 "$PYTHON" "$@"

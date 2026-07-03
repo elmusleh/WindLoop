@@ -1,0 +1,19 @@
+# Cascade Loop Configuration
+# See docs/CONFIGURATION.md for all options
+
+prompt_template: |
+  Read the active plan in .windsurf/plans/active-plan.md.
+  Implement the next pending Recommended Next Step.
+  Update the tracker with what was done.
+  As your VERY LAST action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+
+window_title: "Windsurf"
+pre_delay: 3
+post_delay: 5
+timeout: 600
+
+# Optional settings (uncomment to enable):
+# max_total_time: 3600
+# retry: 3
+# notifications: true
+# sound_file: assets/complete.wav

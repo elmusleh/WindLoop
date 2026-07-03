@@ -1,0 +1,14 @@
+# Quick Test Profile — 3 fast iterations
+iterations: 3
+window_title: "Windsurf"
+sentinel_path: /tmp/cascade-loop.log
+pause_file_path: /tmp/cascade-loop.pause
+
+prompt_template: |
+  Run a quick smoke test on the codebase.
+  Verify nothing is broken.
+  As your VERY LAST action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+
+pre_delay: 1
+post_delay: 2
+timeout: 120

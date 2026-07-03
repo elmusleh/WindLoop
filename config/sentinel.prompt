@@ -1,0 +1,2 @@
+As your very last action, append the line "ITERATION_DONE" to {{ sentinel_path }}.
+This signals the automation script that the iteration is complete.
